@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import EventCard from '../components/EventCard.vue'
-import Cac from '../components/EventCategories.vue'
-
+import EventCategories from '../components/EventCategories.vue'
 import type { EventItem } from '@/type'
-
 import { ref } from 'vue'
 const events = ref<EventItem[]>([
   {
@@ -43,9 +40,8 @@ const events = ref<EventItem[]>([
 </script>
 
 <template>
-  <h1>Event For Good</h1>
   <main class="events">
-    <Cac v-for="event in events" :key="event.id" :event="event"></Cac>
+    <EventCategories v-for="event in events" :key="event.id" :event="event"></EventCategories>
   </main>
 </template>
 
@@ -53,10 +49,6 @@ const events = ref<EventItem[]>([
 .events {
   display: flex;
   flex-direction: column;
-
-  text-align: right;
-}
-h4 {
-  font-size: 20px;
+  align-items: center;
 }
 </style>
